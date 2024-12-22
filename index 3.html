@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Prihlásenie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #0077B6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Prihlásenie do TikTok</h2>
+        <form id="login-form">
+            <input type="text" id="username" name="username" placeholder="Menová adresa" required>
+            <input type="password" id="password" name="password" placeholder="Heslo" required>
+            <button type="submit">Prihlásiť sa</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Zabraňuje posielaniu formuláru do servera
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Zobraziť zadané údaje na stránke
+            document.getElementById('output').innerHTML = `
+                <h3>Zadané údaje:</h3>
+                <p><strong>Menová adresa:</strong> ${username}</p>
+                <p><strong>Heslo:</strong> ${password}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
